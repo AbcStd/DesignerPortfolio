@@ -383,7 +383,7 @@ a {
 }
 
 .main__photo {
-  background-image: url(../img/symbols.webp);
+  background-image: url(/img/symbols.webp);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
