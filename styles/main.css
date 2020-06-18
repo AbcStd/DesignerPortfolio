@@ -255,7 +255,6 @@ a {
   font-size: 0.875rem;
   font-weight: 700;
   text-transform: uppercase;
-  line-height: 4;
   margin-right: 2.5rem;
   position: relative;
 }
@@ -287,6 +286,7 @@ a {
   padding: 10px 33px;
   border-radius: 20px;
   transition: 0.2s linear;
+
 }
 
 .header__inner .nav .link-btn:hover {
@@ -300,6 +300,12 @@ a {
   font-weight: 400;
   color: grey;
   display: none;
+  z-index: 3;
+  position: absolute;
+  right: 40px;
+  border: none;
+  background: none;
+  cursor: pointer;
 }
 
 .main {
@@ -1314,12 +1320,37 @@ button:focus {
 }
 
 @media screen and (max-width: 62rem) {
-  .nav {
+  .header__inner .nav {
     display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 20px;
+    right: 25px;
+    background-color: #fff;
+    padding: 20px; 
   }
+
+  .header__inner .show {
+    display: flex;
+  }
+
+  .header__inner .nav .link {
+    line-height: 3;
+  }
+  
+  .header__inner .nav .link::after {
+    top: 30px;
+    left: 3px;  
+  }
+
+  .header__inner .nav .link-btn {
+    margin-top: 10px;
+  }
+
   .burger {
     display: block;
   }
+
   .main__photo img {
     width: 250px;
   }
@@ -1327,28 +1358,34 @@ button:focus {
   .about__photo::before {
     display: none;
   }
+
   .about__content .title {
     font-size: 2rem;
   }
 .about__content .subtitle {
   font-size: 4rem;
   }
+
   .works__cards {
     justify-content: center;  
   }
+
   .read__items {
     flex-wrap: wrap;
     justify-content: center;
     padding-top: 3rem;
   }
+
   .read__header .title {
     font-size: 2rem;
     padding-bottom: 0.5rem;
   }
+
   .read__item .text {
     padding-top: 0.5rem;
     padding-bottom: 0.3rem;
   }
+
   .read {
     margin-top: 12rem;
     margin-bottom: 5rem;
@@ -1360,6 +1397,9 @@ button:focus {
 }
 
 @media screen and (max-width: 45rem) {
+  .about__content .subtitle {
+    font-size: 3rem;
+  }
   .main__inner {
     flex-direction: column;
   }
